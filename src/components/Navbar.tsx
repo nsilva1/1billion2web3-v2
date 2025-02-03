@@ -13,11 +13,13 @@ const Navbar = () => {
 
   return (
     <nav className='w-full flex p-6 justify-between items-center navbar'>
+        <Link href='/'>
         <Image 
             src={logo}
             className='w-[50px] h-[50px]'
             alt='Logo'
         />
+        </Link>
 
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             {
