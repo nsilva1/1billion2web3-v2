@@ -15,7 +15,7 @@ const page = () => {
     <div>
         <div className={`flex flex-col items-center lg:flex-row justify-between lg:px-20`}>
         {/* Login form card */}
-        <div className='bg-white shadow-xl rounded-xl w-96 p-4'>
+        <div className='bg-white shadow-xl rounded-xl w-96 p-6'>
             <div className='flex flex-col gap-4'>
                 <Image src={logo} alt='1Billion2Web3' className='w-[100px] h-[100px] mx-auto' />
                 <div>

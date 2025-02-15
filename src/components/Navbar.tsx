@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { navbarButtons } from '@/utils/constants'
+import { navbarButtons } from '@/lib/constants'
 import Image from 'next/image'
 import logo from '@/images/1b2web3.png'
 import Link from 'next/link'
@@ -24,7 +24,7 @@ const Navbar = () => {
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
             {
                 navbarButtons.map((navbaBbutton, index) => (
-                    <li key={index} className={`font-normal cursor-pointer text-[16px] ${index === navbarButtons.length -1 ? 'mr-0' : 'mr-10'}`}>
+                    <li key={index} className={`font-normal cursor-pointer text-[16px] text-white bg-sky-500 hover:bg-sky-700 py-2 px-4 rounded-xl ${index === navbarButtons.length -1 ? 'mr-0' : 'mr-10'}`}>
                         <Link href={navbaBbutton.path}>{navbaBbutton.label}</Link>
                     </li>
                 ))
@@ -44,7 +44,7 @@ const Navbar = () => {
                 <ul className="list-none flex flex-col justify-end items-center flex-1">
                 {
                 navbarButtons.map((navbaBbutton, index) => (
-                    <li key={index} className={`font-normal cursor-pointer text-[16px] ${index === navbarButtons.length -1 ? 'mb-0' : 'mb-5'}`}>
+                    <li key={index} className={`font-normal cursor-pointer text-[16px] text-white bg-sky-500 hover:bg-sky-700 py-2 px-4 rounded-xl ${index === navbarButtons.length -1 ? 'mb-0' : 'mb-5'}`}>
                         <Link href={navbaBbutton.path}>{navbaBbutton.label}</Link>
                     </li>
                 ))
