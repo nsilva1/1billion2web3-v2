@@ -1,9 +1,16 @@
 import React from 'react'
+import { auth } from '@/lib/auth'
+import { redirect } from 'next/navigation'
 
-const page = () => {
+const Page = async () => {
+  const session = await auth()
+  if(!session) redirect('/login')
+
   return (
-    <div>page</div>
+    <div>
+      Dashboard page
+    </div>
   )
 }
 
-export default page
+export default Page
