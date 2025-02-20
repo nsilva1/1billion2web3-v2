@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useState } from 'react'
+import React from 'react'
 import { navbarButtons } from '@/lib/constants'
 import Image from 'next/image'
 import logo from '@/images/1b2web3.png'
@@ -10,9 +8,7 @@ import close from '@/images/close.svg'
 import { auth } from '@/lib/auth'
 
 const Navbar = async () => {
-    const session = await auth()
-
-    const [toggle, setToggle] = useState(false)
+    const session = await auth();
 
   return (
     <nav className='w-full flex p-6 justify-between items-center navbar'>
@@ -46,13 +42,12 @@ const Navbar = async () => {
         {/* Mobile view */}
         <div className={`sm:hidden flex justify-end items-center flex-1`}>
             <Image 
-                src={toggle ? close : menu}
+                src={menu}
                 className='object-contain'
                 alt='Menu'
-                onClick={() => setToggle(!toggle)}
             />
 
-            <div className={`${toggle ? 'flex' : 'hidden'} p-6 absolute top-20 right-0 mx-4 my-2 rounded-xl shadow-xl sidebar`}>
+            <div className={`flex md:hidden p-6 absolute top-20 right-0 mx-4 my-2 rounded-xl shadow-xl sidebar`}>
                 <ul className="list-none flex flex-col justify-end items-center flex-1">
                 {
                 navbarButtons.map((navbaBbutton, index) => (

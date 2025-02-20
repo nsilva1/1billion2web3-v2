@@ -1,9 +1,6 @@
-'use client'
-
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import menu from '@/images/menu.svg'
-import close from '@/images/close.svg'
 import { sideMenuItems } from "@/lib/constants";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +8,6 @@ import Link from "next/link";
 
 export default function DashboardLayout({children}: {children: ReactNode}){
     const router = useRouter();
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // let activeStyling = `${router.pathname === item.href ? 'bg-gray-200 font-bold' : ''}`
 
@@ -20,13 +16,13 @@ export default function DashboardLayout({children}: {children: ReactNode}){
         {/* Mobile Navbar/Sidebar */}
         <div className="col-span-6 bg-gray-800 text-white p-4 md:hidden flex justify-between items-center">
           <span className="font-bold">My App</span> {/* Your app name */}
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <Image src={close} alt="close" className="h-6 w-6" /> : <Image src={menu} alt="close" className="h-6 w-6" />}
+          <button>
+            <Image src={menu} alt="menu" className="h-6 w-6" />
           </button>
         </div>
   
         {/* Sidebar (Hidden on mobile by default) */}
-        <aside className={`md:block md:col-span-1 bg-gray-100 ${isMobileMenuOpen ? 'block' : 'hidden'} md:flex md:flex-col transition-transform duration-300 ease-in-out z-10 md:z-0`} style={{height: "100vh"}}>
+        <aside className={`md:col-span-1 bg-gray-100 md:flex md:flex-col transition-transform duration-300 ease-in-out z-10 md:z-0`} style={{height: "100vh"}}>
           <div className="md:flex md:flex-col md:h-full"> {/* Added for full height on desktop */}
             <div className="p-4 md:p-6">
               {/* Sidebar Content */}
